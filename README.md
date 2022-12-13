@@ -418,7 +418,7 @@ r.BorderSizePixel = 0
 r.Position = UDim2.new(0.1000, 0, 0.015625, 0)
 r.Size = UDim2.new(0, 21, 0, 25)
 r.Font = Enum.Font.Arial
-r.Text = "Steal X Attach!!"
+r.Text = "Steal X Attach!!            "
 r.TextColor3 = Color3.fromRGB(0, 0, 0)
 r.TextSize = 15.000
 r.MouseButton1Click:Connect(function()
