@@ -3,6 +3,7 @@
 local SynapseXreal = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local bar = Instance.new("Frame")
+local C = Instance.new("TextButton")
 local Close = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
 local security = Instance.new("TextLabel")
@@ -20,6 +21,9 @@ local title = Instance.new("TextLabel")
 local list = Instance.new("Frame")
 local execute = Instance.new("TextButton")
 local clear = Instance.new("TextButton")
+local c = Instance.new("TextButton")
+local ca = Instance.new("TextButton")
+local car = Instance.new("TextButton")
 local scripthub = Instance.new("TextButton")
 local Attach = Instance.new("TextButton")
 local title_2 = Instance.new("ImageLabel")
@@ -62,21 +66,37 @@ bar.BorderSizePixel = 0
 bar.Position = UDim2.new(-0, 0, -0.00296382909, 0)
 bar.Size = UDim2.new(0, 689, 0, 25)
 
+C.Name = "C"
+C.Parent = bar
+C.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+C.BackgroundTransparency = 1.000
+C.BorderColor3 = Color3.fromRGB(27, 42, 53)
+C.BorderSizePixel = 0
+C.Position = UDim2.new(0.969521046, 0, 0, 0)
+C.Size = UDim2.new(0, 21, 0, 25)
+C.Font = Enum.Font.Arial
+C.Text = "X"
+C.TextColor3 = Color3.fromRGB(255, 0, 0)
+C.TextSize = 16.000
+C.MouseButton1Click:Connect(function()
+    SynapseXreal:Destroy()
+end)
+
 Close.Name = "Close"
 Close.Parent = bar
 Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Close.BackgroundTransparency = 1.000
 Close.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Close.BorderSizePixel = 0
-Close.Position = UDim2.new(0.969521046, 0, 0, 0)
+Close.Position = UDim2.new(0.939521046, 0, 0, -3)
 Close.Size = UDim2.new(0, 21, 0, 25)
 Close.Font = Enum.Font.Arial
-Close.Text = "X"
+Close.Text = "-"
 Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-Close.TextSize = 14.000
+Close.TextSize = 40.000
 Close.MouseButton1Click:Connect(function()
-    SynapseXreal:Destroy()
 end)
+
 
 ImageLabel.Parent = MainFrame
 ImageLabel.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
@@ -234,7 +254,7 @@ title.BackgroundTransparency = 1.000
 title.Position = UDim2.new(0.330062926, 0, 0.00625000056, 0)
 title.Size = UDim2.new(0, 200, 0, 22)
 title.Font = Enum.Font.SourceSans
-title.Text = "Synapse X By STEAL HUB"
+title.Text = "Steal X"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 16.000
 
@@ -261,7 +281,7 @@ execute.MouseButton1Click:Connect(function()
         loadstring(Source.Text)()
     end
     if injected == false then
-        title.Text = "Synapse X Remake  - RBX (not injected! press attach)"
+        title.Text = "Steal X (not injected! press attach)"
     end
 end)
 
@@ -277,6 +297,51 @@ clear.Text = "Clear"
 clear.TextColor3 = Color3.fromRGB(255, 255, 255)
 clear.TextSize = 14.000
 clear.MouseButton1Click:Connect(function()
+    Source.Text = ""
+end)
+
+c.Name = "c"
+c.Parent = MainFrame
+c.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+c.BackgroundTransparency = 0.800
+c.BorderSizePixel = 0
+c.Position = UDim2.new(0.285146105, 0, 0.887499988, 0)
+c.Size = UDim2.new(0, 84, 0, 30)
+c.Font = Enum.Font.Arial
+c.Text = "Open File"
+c.TextColor3 = Color3.fromRGB(255, 255, 255)
+c.TextSize = 14.000
+c.MouseButton1Click:Connect(function()
+    Source.Text = ""
+end)
+
+ca.Name = "ca"
+ca.Parent = MainFrame
+ca.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+ca.BackgroundTransparency = 0.800
+ca.BorderSizePixel = 0
+ca.Position = UDim2.new(0.417146105, 0, 0.887499988, 0)
+ca.Size = UDim2.new(0, 84, 0, 30)
+ca.Font = Enum.Font.Arial
+ca.Text = "Execute File"
+ca.TextColor3 = Color3.fromRGB(255, 255, 255)
+ca.TextSize = 14.000
+ca.MouseButton1Click:Connect(function()
+    Source.Text = ""
+end)
+
+car.Name = "car"
+car.Parent = MainFrame
+car.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+car.BackgroundTransparency = 0.800
+car.BorderSizePixel = 0
+car.Position = UDim2.new(0.549146105, 0, 0.887499988, 0)
+car.Size = UDim2.new(0, 84, 0, 30)
+car.Font = Enum.Font.Arial
+car.Text = "Save File"
+car.TextColor3 = Color3.fromRGB(255, 255, 255)
+car.TextSize = 14.000
+car.MouseButton1Click:Connect(function()
     Source.Text = ""
 end)
 
@@ -309,22 +374,122 @@ Attach.TextSize = 14.000
 Attach.MouseButton1Click:Connect(function()
     print("hi")
     if injected == true then
-        title.Text = "Synaps X (already injected!)"
+        title.Text = "Steal X (already injected!)"
         wait(1)
-        title.Text = "Synapse  X"
+        title.Text = "Steal X"
     end
     if injected == false then
-        title.Text = "Synapse X (checking...)"
-        wait(0.1)
-        title.Text = "Synapse X (injecting...)"
-        wait(1.5)
-        title.Text = "Synapse X (checking whitelist...)"
-        wait(0.8)
-        title.Text = "Synapse X (scanning...)"
-        wait(0.3)
-        title.Text = "Synapse X (ready!)"
-        wait(0.5)
-        title.Text = "Synapse X"
+        local ani = Instance.new("ScreenGui")
+local p = Instance.new("Frame")
+local b = Instance.new("Frame")
+local r = Instance.new("TextButton")
+local Ca = Instance.new("TextButton")
+local Car = Instance.new("TextButton")
+local Care = Instance.new("TextButton")
+local Carew = Instance.new("TextButton")
+
+
+ani.Name = "ani"
+ani.Parent = game.CoreGui
+ani.ResetOnSpawn = false
+
+p.Name = "p"
+p.Parent = ani
+p.Active = true
+p.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+p.BorderSizePixel = 0
+p.Position = UDim2.new(0.0543109924, 0, 0.103222892, 0)
+p.Size = UDim2.new(0, 689, 0, 320)
+
+b.Name = "b"
+b.Parent = p
+b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+b.BackgroundTransparency = 0
+b.BorderSizePixel = 0
+b.Position = UDim2.new(-0, 0, -0.00296382909, 1)
+b.Size = UDim2.new(0, 689, 0, 25)
+
+r.Name = "r"
+r.Parent = b
+r.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+r.BackgroundTransparency = 1.000
+r.BorderColor3 = Color3.fromRGB(0, 0, 0)
+r.BorderSizePixel = 0
+r.Position = UDim2.new(0.1000, 0, 0.015625, 0)
+r.Size = UDim2.new(0, 21, 0, 25)
+r.Font = Enum.Font.Arial
+r.Text = "Steal X Attach!!"
+r.TextColor3 = Color3.fromRGB(0, 0, 0)
+r.TextSize = 15.000
+r.MouseButton1Click:Connect(function()
+end)
+
+Ca.Name = "Ca"
+Ca.Parent = b
+Ca.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Ca.BackgroundTransparency = 1.000
+Ca.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ca.BorderSizePixel = 0
+Ca.Position = UDim2.new(0.10000, 0, 0.015625, 27)
+Ca.Size = UDim2.new(0, 21, 0, 25)
+Ca.Font = Enum.Font.Arial
+Ca.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ca.TextSize = 11.000
+Ca.Text = "Checking version . . .                  "
+Ca.MouseButton1Click:Connect(function()
+end)
+
+wait(1)
+Car.Name = "Car"
+Car.Parent = b
+Car.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Car.BackgroundTransparency = 1.000
+Car.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Car.BorderSizePixel = 0
+Car.Position = UDim2.new(0.10000, 0, 0.015625, 45)
+Car.Size = UDim2.new(0, 21, 0, 25)
+Car.Font = Enum.Font.Arial
+Car.TextColor3 = Color3.fromRGB(255, 255, 255)
+Car.TextSize = 11.000
+Car.Text = "  Roblox App: Universal                  "
+Car.MouseButton1Click:Connect(function()
+end)
+
+wait(1)
+Care.Name = "Care"
+Care.Parent = b
+Care.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Care.BackgroundTransparency = 1.000
+Care.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Care.BorderSizePixel = 0
+Care.Position = UDim2.new(0.10000, 0, 0.015625, 62)
+Care.Size = UDim2.new(0, 21, 0, 25)
+Care.Font = Enum.Font.Arial
+Care.TextColor3 = Color3.fromRGB(255, 255, 255)
+Care.TextSize = 11.000
+Care.Text = "Core Starting ...                           "
+Care.MouseButton1Click:Connect(function()
+end)
+
+wait(1)
+Carew.Name = "Carew"
+Carew.Parent = b
+Carew.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Carew.BackgroundTransparency = 1.000
+Carew.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Carew.BorderSizePixel = 0
+Carew.Position = UDim2.new(0.10000, 0, 0.015625, 79)
+Carew.Size = UDim2.new(0, 21, 0, 25)
+Carew.Font = Enum.Font.Arial
+Carew.TextColor3 = Color3.fromRGB(255, 255, 255)
+Carew.TextSize = 11.000
+Carew.Text = "Key : 25524                                 "
+Carew.MouseButton1Click:Connect(function()
+end)
+
+wait(0.1)
+ani:Destroy()
+
         injected = true
     end
 end)
@@ -467,7 +632,7 @@ title_3.BackgroundTransparency = 1.000
 title_3.Position = UDim2.new(0.161097407, 0, -0.000307376496, 0)
 title_3.Size = UDim2.new(0, 200, 0, 22)
 title_3.Font = Enum.Font.SourceSans
-title_3.Text = "Synapse X Remake - Script Hub"
+title_3.Text = "Synapse X Script Hub"
 title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 title_3.TextSize = 16.000
 title_3.ZIndex = 110
@@ -799,7 +964,7 @@ while true do
             descri.Text = ""
         end
         if scriptselected == "dex" then
-            descri.Text = "A version of the popular Dex explorer with patches specifically for Synapse X Remake."
+            descri.Text = "A version of the popular Dex explorer with patches specifically for Synoob X"
         end
         if scriptselected == "esp" then
             descri.Text = "ESP Made by ic3w0lf using the Drawing API."
@@ -811,4 +976,4 @@ while true do
             descri.Text = "Dumps the place as a .rbxl file in your workspace folder."
         end
     end
-end#
+end
