@@ -1,4 +1,4 @@
--- Instances:
+-- by ball
 
 local SynapseXreal = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
@@ -44,9 +44,22 @@ local title_4 = Instance.new("ImageLabel")
 local scriptselected = "none"
 local injected = false
 
---Properties:
 
-SynapseXreal.Name = "Synapse X (real)"
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+
+local settings = {
+["Keybind"] = "p"
+}
+
+
+mouse.KeyDown:Connect(function(key)
+if key:lower() == settings["Keybind"]:lower() then
+        SynapseXreal.Enabled = not SynapseXreal.Enabled
+    end
+end)
+
+SynapseXreal.Name = "SynapseXreal"
 SynapseXreal.Parent = game.CoreGui
 SynapseXreal.ResetOnSpawn = false
 
@@ -95,6 +108,24 @@ Close.Text = "-"
 Close.TextColor3 = Color3.fromRGB(255, 255, 255)
 Close.TextSize = 40.000
 Close.MouseButton1Click:Connect(function()
+   SynapseXreal.Enabled = not SynapseXreal.Enabled
+   local exe = Instance.new("ScreenGui")
+local momo = Instance.new("ImageButton")
+
+
+exe.Parent = game.CoreGui
+exe.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+momo.Parent = exe
+momo.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+momo.BorderSizePixel = 0
+momo.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+momo.Size = UDim2.new(0, 45, 0, 45)
+momo.Image = "http://www.roblox.com/asset/?id=11819384350"
+momo.MouseButton1Click:Connect(function()
+SynapseXreal.Enabled = not SynapseXreal.Enabled
+exe:Destroy()
+end)
 end)
 
 
@@ -254,7 +285,7 @@ title.BackgroundTransparency = 1.000
 title.Position = UDim2.new(0.330062926, 0, 0.00625000056, 0)
 title.Size = UDim2.new(0, 200, 0, 22)
 title.Font = Enum.Font.SourceSans
-title.Text = "Steal X"
+title.Text = "Synapse X by กุเอง"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 16.000
 
@@ -281,7 +312,7 @@ execute.MouseButton1Click:Connect(function()
         loadstring(Source.Text)()
     end
     if injected == false then
-        title.Text = "Steal X (not injected! press attach)"
+        title.Text = "Synapse X by กูเอง (not injected! press attach)"
     end
 end)
 
@@ -374,9 +405,9 @@ Attach.TextSize = 14.000
 Attach.MouseButton1Click:Connect(function()
     print("hi")
     if injected == true then
-        title.Text = "Steal X (already injected!)"
+        title.Text = "Synapse X by กูเอง (already injected!)"
         wait(1)
-        title.Text = "Steal X"
+        title.Text = "Synapse X by กูเอง"
     end
     if injected == false then
         local ani = Instance.new("ScreenGui")
@@ -418,7 +449,7 @@ r.BorderSizePixel = 0
 r.Position = UDim2.new(0.1000, 0, 0.015625, 0)
 r.Size = UDim2.new(0, 21, 0, 25)
 r.Font = Enum.Font.Arial
-r.Text = "Steal X Attach!!            "
+r.Text = "Synapse X by กูเอง           "
 r.TextColor3 = Color3.fromRGB(0, 0, 0)
 r.TextSize = 15.000
 r.MouseButton1Click:Connect(function()
@@ -632,7 +663,7 @@ title_3.BackgroundTransparency = 1.000
 title_3.Position = UDim2.new(0.161097407, 0, -0.000307376496, 0)
 title_3.Size = UDim2.new(0, 200, 0, 22)
 title_3.Font = Enum.Font.SourceSans
-title_3.Text = "Synapse X Script Hub"
+title_3.Text = "Synapse X by กูเอง Script Hub"
 title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 title_3.TextSize = 16.000
 title_3.ZIndex = 110
